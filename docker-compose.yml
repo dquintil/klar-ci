@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  postgres:
+    image: arminc/clair-db 
+    ports:
+      - '5432:5432'
+  klar:
+    build: .
+    depends_on:
+      - postgres
+    environment:
+      AWS_REGION: $AWS_REGION
+      AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
