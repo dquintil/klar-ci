@@ -1,8 +1,8 @@
-FROM quay.io/coreos/clair:v2.0.1
+FROM quay.io/coreos/clair:v2.0.3
 
 RUN apk --no-cache upgrade
 RUN apk add --no-cache curl py-pip \
- && curl -L https://github.com/optiopay/klar/releases/download/v2.0.1/klar-2.0.1-linux-amd64 \
+ && curl -L https://github.com/optiopay/klar/releases/download/v2.1.0/klar-2.1.0-linux-amd64 \
   > /usr/local/bin/klar \
  && chmod +x /usr/local/bin/klar \
  && pip install awscli
